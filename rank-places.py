@@ -188,7 +188,3 @@ print("-- {0} / {1} joins succeed. ({2}%)".format(
         floor(pass_count / (pass_count + fail_count) * 100)
     ))
 
-print("""-- Calculating label directions
-ALTER TABLE osm_places ADD COLUMN ldir INTEGER;
-UPDATE osm_places SET ldir = city_label_direction(geometry)
-    WHERE scalerank > 0;""")
