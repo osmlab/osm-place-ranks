@@ -53,8 +53,7 @@ cur.execute("""
         select      st_astext(geom),
                     lower(name),
                     lower(namealt),
-                    scalerank,
-                    adm0name
+                    scalerank
         from        {0}
         order by    scalerank asc
         """.format(ne_table)
@@ -74,7 +73,6 @@ for record in cur.fetchall():
     except:
         ne_namealt = None
     ne_scalerank = record[3]
-    ne_adm0name = record[4]
     match_type = None
     match = []      # will store any successful matches
 
